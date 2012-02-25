@@ -1,0 +1,1 @@
+encmdface.exe chat-server.r -t chat-server.r 
