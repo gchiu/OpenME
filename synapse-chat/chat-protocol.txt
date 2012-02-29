@@ -1,0 +1,40 @@
+User messages to server using ft-chat -- the chat dialect
+
+; login to server
+login username [string!]
+
+Set user configuration
+; setting email address
+email email-address [email!]
+
+; set city location
+city city-name [string!]
+
+; set language
+language LG ( FR, EN )
+
+; set status
+status "STATE"
+
+; set timezone
+TIMEZONE zone [time!]
+
+Send commands to server
+; get the group names
+GET groups
+; show groups with message counts
+SHOW groups
+
+; get all the messages since last recorded
+SYNC date-time [date!] ; can use yesterday,today,days and this is translated to a timestamp 
+
+Message types
+;send a message to a channel
+GCHAT channel-name username user-color message-text font-color [tuple!] background-color [tuple!] font-name 
+; send private chat
+PCHAT [to-username] [ username user-color message-text font-color [tuple!] background-color [tuple!] font-name  ]
+
+Actions eg.send a file listing, nudge other user screen 
+ACTION [from-user:to-user ] [ some-action [string!]]
+ACTION [ other-user ] [ "directory" molded-directory-listing ]
+
